@@ -143,7 +143,7 @@ export function Header() {
   return (
     <header className="flex items-center justify-between">
       <div className="flex-1 space-y-1.5">
-        <h1 className="text-2xl font-bold" id="resume-name">
+        <h1 className="text-3xl font-bold" id="resume-name">
           {RESUME_DATA.name}
         </h1>
         <p

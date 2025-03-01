@@ -91,7 +91,7 @@ interface ProjectCardProps {
 function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   return (
     <Card
-      className="flex h-full flex-col overflow-hidden border p-3"
+      className="flex h-full flex-col overflow-hidden border p-3 break-inside-avoid"
       role="article"
     >
       <CardHeader>
@@ -124,8 +124,8 @@ interface ProjectsProps {
 export function Projects({ projects }: ProjectsProps) {
   return (
     <Section className="print-force-new-page scroll-mb-16 print:space-y-4 print:pt-12">
-      <h2 className="text-xl font-bold" id="projects">
-        Research, MVP experiments, and side projects
+      <h2 className="text-3xl font-bold" id="projects">
+        Research, MVPs, and side projects
       </h2>
       <div
         className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3"

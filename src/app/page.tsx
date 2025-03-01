@@ -74,15 +74,10 @@ export default function ResumePage() {
 
         <div className="space-y-8 print:space-y-4">
           <Summary summary={RESUME_DATA.summary} />
-
-          <WorkExperience work={RESUME_DATA.work} />
-
           <Education education={RESUME_DATA.education} />
-
+          <WorkExperience work={RESUME_DATA.work} />
           <PublicSpeeches publicSpeeches={RESUME_DATA.publicSpeeches} />
-
           {/*<Skills skills={RESUME_DATA.skills} />*/}
-
           <Projects projects={RESUME_DATA.projects} />
         </div>
       </section>

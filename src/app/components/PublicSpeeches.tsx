@@ -33,7 +33,7 @@ function PublicSpeechItem({ publicSpeech }: PublicSpeechItemProps) {
   const { title, publisher, abstract, date, link } = publicSpeech
 
   return (
-    <Card>
+    <Card className="break-inside-avoid">
       <CardHeader>
         <div className="flex items-center justify-between gap-x-2 text-base">
           <h3
@@ -76,8 +76,8 @@ interface PublicSpeechListProps {
  */
 export function PublicSpeeches({ publicSpeeches }: PublicSpeechListProps) {
   return (
-    <Section>
-      <h2 className="text-xl font-bold" id="PublicSpeech-section">
+    <Section className="print-force-new-page">
+      <h2 className="text-3xl font-bold" id="PublicSpeech-section">
         Publications
       </h2>
       <div
