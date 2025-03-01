@@ -78,7 +78,7 @@ export function PublicSpeeches({ publicSpeeches }: PublicSpeechListProps) {
   return (
     <Section>
       <h2 className="text-xl font-bold" id="PublicSpeech-section">
-        Public Speaking
+        Publications
       </h2>
       <div
         className="space-y-4"
