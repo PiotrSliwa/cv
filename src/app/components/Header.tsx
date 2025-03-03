@@ -1,11 +1,11 @@
-import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { RESUME_DATA } from "@/data/resume-data";
+import { GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { RESUME_DATA } from '@/data/resume-data'
 
 interface LocationLinkProps {
-  location: typeof RESUME_DATA.location;
-  locationLink: typeof RESUME_DATA.locationLink;
+  location: typeof RESUME_DATA.location
+  locationLink: typeof RESUME_DATA.locationLink
 }
 
 function LocationLink({ location, locationLink }: LocationLinkProps) {
@@ -22,13 +22,13 @@ function LocationLink({ location, locationLink }: LocationLinkProps) {
         {location}
       </a>
     </p>
-  );
+  )
 }
 
 interface SocialButtonProps {
-  href: string;
-  icon: React.ElementType;
-  label: string;
+  href: string
+  icon: React.ElementType
+  label: string
 }
 
 function SocialButton({ href, icon: Icon, label }: SocialButtonProps) {
@@ -43,12 +43,12 @@ function SocialButton({ href, icon: Icon, label }: SocialButtonProps) {
         <Icon className="size-4" aria-hidden="true" />
       </a>
     </Button>
-  );
+  )
 }
 
 interface ContactButtonsProps {
-  contact: typeof RESUME_DATA.contact;
-  personalWebsiteUrl?: string;
+  contact: typeof RESUME_DATA.contact
+  personalWebsiteUrl?: string
 }
 
 function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
@@ -58,13 +58,13 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
       role="list"
       aria-label="Contact links"
     >
-      {personalWebsiteUrl && (
-        <SocialButton
-          href={personalWebsiteUrl}
-          icon={GlobeIcon}
-          label="Personal website"
-        />
-      )}
+      {/*{personalWebsiteUrl && (*/}
+      {/*  <SocialButton*/}
+      {/*    href={personalWebsiteUrl}*/}
+      {/*    icon={GlobeIcon}*/}
+      {/*    label="Personal website"*/}
+      {/*  />*/}
+      {/*)}*/}
       {contact.email && (
         <SocialButton
           href={`mailto:${contact.email}`}
@@ -88,27 +88,28 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
         />
       ))}
     </div>
-  );
+  )
 }
 
 interface PrintContactProps {
-  contact: typeof RESUME_DATA.contact;
-  personalWebsiteUrl?: string;
+  contact: typeof RESUME_DATA.contact
+  personalWebsiteUrl?: string
 }
 
 function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
+  const linkedIn = contact.social.find((social) => social.name === 'LinkedIn')
   return (
     <div
       className="hidden gap-x-2 font-mono text-sm text-foreground/80 print:flex print:text-[12px]"
       aria-label="Print contact information"
     >
-      {personalWebsiteUrl && (
+      {linkedIn && (
         <>
           <a
             className="underline hover:text-foreground/70"
-            href={personalWebsiteUrl}
+            href={linkedIn.url}
           >
-            {new URL(personalWebsiteUrl).hostname}
+            {linkedIn.url.replace('https://', '').replace('www.', '')}
           </a>
           <span aria-hidden="true">/</span>
         </>
@@ -133,7 +134,7 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
         </a>
       )}
     </div>
-  );
+  )
 }
 
 /**
@@ -177,5 +178,5 @@ export function Header() {
         <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
       </Avatar>
     </header>
-  );
+  )
 }
