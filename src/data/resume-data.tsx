@@ -94,6 +94,24 @@ export const RESUME_DATA = {
       end: '2015',
     },
   ],
+  certification: [
+    {
+      name: 'EF SET Certificate™ (C2 Proficient)',
+      issuer: 'EF SET',
+      date: 'Jan, 2020',
+      link: {
+        href: 'https://cert.efset.org/KSfvpT',
+      }
+    },
+    {
+      name: 'PRINCE2® Foundation Certificate (ID: GR633097576PS)',
+      issuer: 'People Cert',
+      date: 'Feb, 2018',
+      link: {
+        href: undefined
+      }
+    },
+  ],
   work: [
     {
       company: 'Mistho',
@@ -642,7 +660,7 @@ export const RESUME_DATA = {
       ),
     },
     {
-      title: 'The Model of eSports Ecosystems',
+      title: 'The Model of eSports Ecosystems (scientific article)',
       publisher: 'Hradec Economic Days 2020',
       date: 'Apr 1, 2020',
       link: { href: 'https://wir.ue.wroc.pl/docstore/download/WUT54a0ea0355df430591f15143ea699e85/Sliwa_P_Krzos_G_The_Model_of_eSports.pdf' },
@@ -717,6 +735,7 @@ export const RESUME_DATA = {
       publisher: 'Towarzystwo Ekonomistów Polskich',
       date: 'Dec 14, 2016',
       link: { href: 'http://tep.org.pl/wp-content/uploads/II-miejsce-Piotr-Sliwa.pdf' },
+      abstract: ''
     },
   ]
 } as const
