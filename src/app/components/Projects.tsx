@@ -125,8 +125,11 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <Section className="print-force-new-page scroll-mb-16 print:space-y-4 print:pt-12">
       <h2 className="text-3xl font-bold" id="projects">
-        Research, MVPs, and side projects
+        🚀 Other Projects
       </h2>
+      <h3 className="text-lg text-gray-500">
+        Research projects, MVP experiments, and other side projects I led
+      </h3>
       <div
         className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3"
         role="feed"

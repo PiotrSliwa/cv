@@ -137,7 +137,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
   return (
     <Section className="print-force-new-page">
       <h2 className="text-3xl font-bold" id="work-experience">
-        Work Experience
+        💪 Work Experience
       </h2>
       <div className="space-y-4 print:space-y-0" role="feed" aria-labelledby="work-experience">
         {work.map((item) => (

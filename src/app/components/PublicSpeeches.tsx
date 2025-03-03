@@ -78,8 +78,11 @@ export function PublicSpeeches({ publicSpeeches }: PublicSpeechListProps) {
   return (
     <Section className="print-force-new-page">
       <h2 className="text-3xl font-bold" id="PublicSpeech-section">
-        Publications
+        📢 Publications
       </h2>
+      <h3 className="text-lg text-gray-500">
+        Scientific articles and public presentations on conferences
+      </h3>
       <div
         className="space-y-4"
         role="feed"
