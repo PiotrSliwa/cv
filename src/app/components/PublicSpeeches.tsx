@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Section } from '@/components/ui/section'
 import { RESUME_DATA } from '@/data/resume-data'
+import { SectionHeadline } from '@/app/components/SectionHeadline'
 
 type PublicSpeech = (typeof RESUME_DATA)['publicSpeeches'][number]
 
@@ -58,7 +59,7 @@ function PublicSpeechItem({ publicSpeech }: PublicSpeechItemProps) {
         </h4>
       </CardHeader>
       <CardContent>
-        <div className="mt-2 text-xs text-foreground/80 print:mt-1 print:text-[10px] text-pretty">
+        <div className="mt-2 text-pretty text-xs text-foreground/80 print:mt-1 print:text-[10px]">
           {abstract}
         </div>
       </CardContent>
@@ -77,12 +78,7 @@ interface PublicSpeechListProps {
 export function PublicSpeeches({ publicSpeeches }: PublicSpeechListProps) {
   return (
     <Section className="print-force-new-page">
-      <h2 className="text-3xl font-bold" id="PublicSpeech-section">
-        📢 Publications
-      </h2>
-      <h3 className="text-lg text-gray-500">
-        Scientific articles and public presentations on conferences
-      </h3>
+      <SectionHeadline id="publications" description={'Scientific articles and public presentations on conferences'}>📢 Publications</SectionHeadline>
       <div
         className="space-y-4"
         role="feed"

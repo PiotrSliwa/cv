@@ -1,19 +1,20 @@
-import { Badge } from "../../components/ui/badge";
+import { Badge } from '../../components/ui/badge'
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from "../../components/ui/card";
-import { Section } from "../../components/ui/section";
-import { RESUME_DATA } from "../../data/resume-data";
+} from '../../components/ui/card'
+import { Section } from '../../components/ui/section'
+import { RESUME_DATA } from '../../data/resume-data'
+import { SectionHeadline } from '@/app/components/SectionHeadline'
 
-type ProjectTags = readonly string[];
+type ProjectTags = readonly string[]
 
 interface ProjectLinkProps {
-  title: string;
-  link?: string;
+  title: string
+  link?: string
 }
 
 /**
@@ -21,7 +22,7 @@ interface ProjectLinkProps {
  */
 function ProjectLink({ title, link }: ProjectLinkProps) {
   if (!link) {
-    return <span>{title}</span>;
+    return <span>{title}</span>
   }
 
   return (
@@ -43,21 +44,21 @@ function ProjectLink({ title, link }: ProjectLinkProps) {
         className="hidden font-mono text-xs underline print:visible"
         aria-hidden="true"
       >
-        {link.replace("https://", "").replace("www.", "").replace("/", "")}
+        {link.replace('https://', '').replace('www.', '').replace('/', '')}
       </div>
     </>
-  );
+  )
 }
 
 interface ProjectTagsProps {
-  tags: ProjectTags;
+  tags: ProjectTags
 }
 
 /**
  * Renders a list of technology tags used in the project
  */
 function ProjectTags({ tags }: ProjectTagsProps) {
-  if (tags.length === 0) return null;
+  if (tags.length === 0) return null
 
   return (
     <ul
@@ -75,14 +76,14 @@ function ProjectTags({ tags }: ProjectTagsProps) {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  tags: ProjectTags;
-  link?: string;
+  title: string
+  description: string
+  tags: ProjectTags
+  link?: string
 }
 
 /**
@@ -91,7 +92,7 @@ interface ProjectCardProps {
 function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   return (
     <Card
-      className="flex h-full flex-col overflow-hidden border p-3 break-inside-avoid"
+      className="flex h-full break-inside-avoid flex-col overflow-hidden border p-3"
       role="article"
     >
       <CardHeader>
@@ -111,11 +112,11 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
         <ProjectTags tags={tags} />
       </CardContent>
     </Card>
-  );
+  )
 }
 
 interface ProjectsProps {
-  projects: (typeof RESUME_DATA)["projects"];
+  projects: (typeof RESUME_DATA)['projects']
 }
 
 /**
@@ -124,12 +125,14 @@ interface ProjectsProps {
 export function Projects({ projects }: ProjectsProps) {
   return (
     <Section className="print-force-new-page scroll-mb-16 print:space-y-4 print:pt-12">
-      <h2 className="text-3xl font-bold" id="projects">
+      <SectionHeadline
+        id="projects"
+        description={
+          'Research projects, MVP experiments, and other side projects I led'
+        }
+      >
         🚀 Other Projects
-      </h2>
-      <h3 className="text-lg text-gray-500">
-        Research projects, MVP experiments, and other side projects I led
-      </h3>
+      </SectionHeadline>
       <div
         className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3"
         role="feed"
@@ -144,11 +147,11 @@ export function Projects({ projects }: ProjectsProps) {
               title={project.title}
               description={project.description}
               tags={project.techStack}
-              link={"link" in project ? project.link?.href : undefined}
+              link={'link' in project ? project.link?.href : undefined}
             />
           </article>
         ))}
       </div>
     </Section>
-  );
+  )
 }

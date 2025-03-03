@@ -1,15 +1,16 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Section } from "@/components/ui/section";
-import { RESUME_DATA } from "@/data/resume-data";
-import { cn } from "@/lib/utils";
+import { Badge } from '@/components/ui/badge'
+import { Card, CardHeader, CardContent } from '@/components/ui/card'
+import { Section } from '@/components/ui/section'
+import { RESUME_DATA } from '@/data/resume-data'
+import { cn } from '@/lib/utils'
+import { SectionHeadline } from '@/app/components/SectionHeadline'
 
-type WorkExperience = (typeof RESUME_DATA)["work"][number];
-type WorkBadges = readonly string[];
+type WorkExperience = (typeof RESUME_DATA)['work'][number]
+type WorkBadges = readonly string[]
 
 interface BadgeListProps {
-  className?: string;
-  badges: WorkBadges;
+  className?: string
+  badges: WorkBadges
 }
 
 /**
@@ -17,11 +18,11 @@ interface BadgeListProps {
  * Handles both mobile and desktop layouts through className prop
  */
 function BadgeList({ className, badges }: BadgeListProps) {
-  if (badges.length === 0) return null;
+  if (badges.length === 0) return null
 
   return (
     <ul
-      className={cn("inline-flex list-none gap-x-1 p-0", className)}
+      className={cn('inline-flex list-none gap-x-1 p-0', className)}
       aria-label="Areas"
     >
       {badges.map((badge) => (
@@ -35,12 +36,12 @@ function BadgeList({ className, badges }: BadgeListProps) {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
 interface WorkPeriodProps {
-  start: WorkExperience["start"];
-  end?: WorkExperience["end"];
+  start: WorkExperience['start']
+  end?: WorkExperience['end']
 }
 
 /**
@@ -50,16 +51,16 @@ function WorkPeriod({ start, end }: WorkPeriodProps) {
   return (
     <div
       className="text-sm tabular-nums text-gray-500"
-      aria-label={`Employment period: ${start} to ${end ?? "Present"}`}
+      aria-label={`Employment period: ${start} to ${end ?? 'Present'}`}
     >
-      {start} - {end ?? "Present"}
+      {start} - {end ?? 'Present'}
     </div>
-  );
+  )
 }
 
 interface CompanyLinkProps {
-  company: WorkExperience["company"];
-  link: WorkExperience["link"];
+  company: WorkExperience['company']
+  link: WorkExperience['link']
 }
 
 /**
@@ -76,11 +77,11 @@ function CompanyLink({ company, link }: CompanyLinkProps) {
     >
       {company}
     </a>
-  );
+  )
 }
 
 interface WorkExperienceItemProps {
-  work: WorkExperience;
+  work: WorkExperience
 }
 
 /**
@@ -88,10 +89,10 @@ interface WorkExperienceItemProps {
  * Handles responsive layout for badges (mobile/desktop)
  */
 function WorkExperienceItem({ work }: WorkExperienceItemProps) {
-  const { company, link, badges, title, start, end, description } = work;
+  const { company, link, badges, title, start, end, description } = work
 
   return (
-    <Card className="py-1 print:py-0 break-inside-avoid">
+    <Card className="break-inside-avoid py-1 print:py-0">
       <CardHeader className="print:space-y-1">
         <div className="flex items-center justify-between gap-x-2 text-base">
           <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:text-sm">
@@ -104,14 +105,11 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
           {title}
         </h4>
 
-        <BadgeList
-          className="w-full flex flex-wrap gap-x-1"
-          badges={badges}
-        />
+        <BadgeList className="flex w-full flex-wrap gap-x-1" badges={badges} />
       </CardHeader>
 
       <CardContent>
-        <div className="mt-2 text-xs text-foreground/80 print:mt-1 print:text-[10px] text-pretty">
+        <div className="mt-2 text-pretty text-xs text-foreground/80 print:mt-1 print:text-[10px]">
           {description}
         </div>
         <div className="mt-2">
@@ -122,11 +120,11 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 interface WorkExperienceProps {
-  work: (typeof RESUME_DATA)["work"];
+  work: (typeof RESUME_DATA)['work']
 }
 
 /**
@@ -136,10 +134,12 @@ interface WorkExperienceProps {
 export function WorkExperience({ work }: WorkExperienceProps) {
   return (
     <Section className="print-force-new-page">
-      <h2 className="text-3xl font-bold" id="work-experience">
-        💪 Work Experience
-      </h2>
-      <div className="space-y-4 print:space-y-0" role="feed" aria-labelledby="work-experience">
+      <SectionHeadline id="experience">💪 Work Experience</SectionHeadline>
+      <div
+        className="space-y-4 print:space-y-0"
+        role="feed"
+        aria-labelledby="work-experience"
+      >
         {work.map((item) => (
           <article key={`${item.company}-${item.start}`} role="article">
             <WorkExperienceItem work={item} />
@@ -147,5 +147,5 @@ export function WorkExperience({ work }: WorkExperienceProps) {
         ))}
       </div>
     </Section>
-  );
+  )
 }

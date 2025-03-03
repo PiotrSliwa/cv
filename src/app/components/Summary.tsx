@@ -1,9 +1,10 @@
-import { RESUME_DATA } from "@/data/resume-data";
-import { Section } from "../../components/ui/section";
+import { RESUME_DATA } from '@/data/resume-data'
+import { Section } from '../../components/ui/section'
+import { SectionHeadline } from '@/app/components/SectionHeadline'
 
 interface AboutProps {
-  summary: typeof RESUME_DATA.summary;
-  className?: string;
+  summary: typeof RESUME_DATA.summary
+  className?: string
 }
 
 /**
@@ -13,9 +14,7 @@ interface AboutProps {
 export function Summary({ summary, className }: AboutProps) {
   return (
     <Section className={className}>
-      <h2 className="text-3xl font-bold mt-4" id="about-section">
-        💡 About
-      </h2>
+      <SectionHeadline id="about">💡 About</SectionHeadline>
       <div
         className="text-pretty font-mono text-sm text-foreground/80 print:text-[12px]"
         aria-labelledby="about-section"

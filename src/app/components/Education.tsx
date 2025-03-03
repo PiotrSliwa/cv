@@ -1,12 +1,13 @@
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Section } from "@/components/ui/section";
-import { RESUME_DATA } from "@/data/resume-data";
+import { Card, CardHeader, CardContent } from '@/components/ui/card'
+import { Section } from '@/components/ui/section'
+import { RESUME_DATA } from '@/data/resume-data'
+import { SectionHeadline } from '@/app/components/SectionHeadline'
 
-type Education = (typeof RESUME_DATA)["education"][number];
+type Education = (typeof RESUME_DATA)['education'][number]
 
 interface EducationPeriodProps {
-  start: Education["start"];
-  end: Education["end"];
+  start: Education['start']
+  end: Education['end']
 }
 
 /**
@@ -20,18 +21,18 @@ function EducationPeriod({ start, end }: EducationPeriodProps) {
     >
       {start} - {end}
     </div>
-  );
+  )
 }
 
 interface EducationItemProps {
-  education: Education;
+  education: Education
 }
 
 /**
  * Individual education card component
  */
 function EducationItem({ education }: EducationItemProps) {
-  const { school, start, end, degree } = education;
+  const { school, start, end, degree } = education
 
   return (
     <Card>
@@ -39,7 +40,7 @@ function EducationItem({ education }: EducationItemProps) {
         <div className="flex items-center justify-between gap-x-2 text-base">
           <h3
             className="font-semibold leading-none"
-            id={`education-${school.toLowerCase().replace(/\s+/g, "-")}`}
+            id={`education-${school.toLowerCase().replace(/\s+/g, '-')}`}
           >
             {school}
           </h3>
@@ -50,16 +51,16 @@ function EducationItem({ education }: EducationItemProps) {
         className="mt-2 text-foreground/80 print:text-[12px]"
         aria-labelledby={`education-${school
           .toLowerCase()
-          .replace(/\s+/g, "-")}`}
+          .replace(/\s+/g, '-')}`}
       >
         {degree}
       </CardContent>
     </Card>
-  );
+  )
 }
 
 interface EducationListProps {
-  education: readonly Education[];
+  education: readonly Education[]
 }
 
 /**
@@ -69,9 +70,7 @@ interface EducationListProps {
 export function Education({ education }: EducationListProps) {
   return (
     <Section>
-      <h2 className="text-3xl font-bold" id="education-section">
-        🎓 Education
-      </h2>
+      <SectionHeadline id="education">🎓 Education</SectionHeadline>
       <div
         className="space-y-4"
         role="feed"
@@ -84,5 +83,5 @@ export function Education({ education }: EducationListProps) {
         ))}
       </div>
     </Section>
-  );
+  )
 }
