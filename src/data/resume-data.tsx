@@ -13,14 +13,18 @@ export const RESUME_DATA = {
   initials: 'PS',
   location: 'Wrocław, Poland, CET',
   locationLink: 'https://www.google.com/maps/place/Wrocław',
-  about: 'Engineering Leader | Startup Builder | Researcher',
+  about: 'Hands-on R&D Lead at startups and Fortune 500 companies',
   highlights: [
     {
-      name: 'Hands-on Engineering Leadership Experience',
+      name: 'Hands-on Engineering Team Management',
       value: '8+ years'
     },
     {
-      name: 'Hands-on Research Leadership Experience',
+      name: 'Executive Function',
+      value: '3+ years'
+    },
+    {
+      name: 'Hands-on Research Project Management',
       value: '5+ years'
     },
     {

@@ -17,7 +17,7 @@ interface HighlightProps {
 function HighlightCard({ name, value }: { name: string; value: string }) {
   return (
     <Card
-      className="flex h-full break-inside-avoid flex-col overflow-hidden border p-3"
+      className="flex flex-1 break-inside-avoid flex-col overflow-hidden border p-3"
       role="article"
     >
       <CardHeader>
@@ -31,8 +31,8 @@ function HighlightCard({ name, value }: { name: string; value: string }) {
 export function Highlights({ highlights, className }: HighlightProps) {
   return (
     <Section className={className}>
-      <SectionHeadline id="about">💡 Highlights</SectionHeadline>
-      <div className="flex w-full gap-1">
+      <SectionHeadline id="about">💡Highlights</SectionHeadline>
+      <div className="flex w-full gap-1 items-stretch h-[130px]">
         {highlights.map((highlight, i) => (
           <HighlightCard
             key={i}
