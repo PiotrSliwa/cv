@@ -10,6 +10,7 @@ import { Header } from "./components/Header";
 import { PublicSpeeches } from '@/app/components/PublicSpeeches'
 import { Certification } from '@/app/components/Certification'
 import { Highlights } from '@/app/components/Highlights'
+import { Note } from '@/app/components/Note'
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} - Resume`,
@@ -83,6 +84,7 @@ export default function ResumePage() {
           {/*<Skills skills={RESUME_DATA.skills} />*/}
           <Projects projects={RESUME_DATA.projects} />
           <Certification certifications={RESUME_DATA.certification} />
+          <Note />
         </div>
       </section>
 

@@ -9,11 +9,11 @@ import {
 import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/icons'
 
 export const RESUME_DATA = {
-  name: 'Piotr Sliwa',
+  name: 'Piotr Śliwa',
   initials: 'PS',
   location: 'Wrocław, Poland, CET',
   locationLink: 'https://www.google.com/maps/place/Wrocław',
-  about: 'Hands-on R&D Lead at startups and Fortune 500 companies',
+  about: 'Hands-on R&D Lead',
   highlights: [
     {
       name: 'Hands-on Engineering Team Management',
@@ -28,7 +28,7 @@ export const RESUME_DATA = {
       value: '5+ years'
     },
     {
-      name: 'Professional Coding Experience',
+      name: 'Coding Professionally',
       value: '15+ years'
     },
   ],
