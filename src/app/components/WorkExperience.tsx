@@ -133,7 +133,7 @@ interface WorkExperienceProps {
  */
 export function WorkExperience({ work }: WorkExperienceProps) {
   return (
-    <Section className="print-force-new-page">
+    <Section className="print-padding">
       <SectionHeadline id="experience">💪 Work Experience</SectionHeadline>
       <div
         className="space-y-4 print:space-y-0"

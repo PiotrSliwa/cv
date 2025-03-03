@@ -81,7 +81,7 @@
 }
 
 @media print {
-    .print-force-new-page {
+    .print-force-new-page, .print-padding {
         padding-top: 100px;
     }
 }
